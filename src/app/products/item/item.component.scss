@@ -1,0 +1,9 @@
+@import '../../../styles.scss';
+
+.container {
+ @include dot-box(#E1D0D0, $primary);
+
+    &__content {
+
+    }
+}

@@ -1,0 +1,46 @@
+@import "../../../styles.scss";
+
+$default-line-height: 59px;
+
+:host {
+  ::ng-deep.mdc-list-item--with-leading-radio .mdc-list-item__start {
+    margin-right: 2px !important;
+  }
+
+  .mat-icon {
+    font-size: 50px;
+  }
+}
+
+.card-option {
+  @include dot-box(#e1d0d0, $intermediary);
+  margin: 1.25rem 0 1.25rem 0;
+  display: flex;
+  flex-direction: row;
+
+  .text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    &__title {
+      font-size: 1.5em;
+      line-height: $default-line-height;
+      color: $secondary;
+      font-weight: 100;
+      @include ellipsis-text(7.55rem);
+    }
+    &__subtitle {
+      color: $secondary;
+      font-size: 0.8em;
+      font-style: italic;
+      line-height: $default-line-height;
+      @include ellipsis-text(16rem);
+    }
+
+    app-btn-icon:nth-child(3) {
+        margin: 0 0 0 auto;
+    }
+  }
+}

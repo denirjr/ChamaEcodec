@@ -1,0 +1,14 @@
+<mat-list>
+  @for (item of items; track item) {
+  <mat-list-item class="card-option">
+    @if (item) {
+    <div class="text-container">
+      <span class="text-container__title">{{ item.title }}</span>
+      <span class="text-container__subtitle">{{ item.subtitle }}</span>
+      <app-btn-icon [icon]="'delete'" />
+      <app-btn-icon [icon]="'edit_square'" />
+    </div>
+    }
+  </mat-list-item>
+  }
+</mat-list>
