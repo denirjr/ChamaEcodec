@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 2rem 0 0.5rem 0;
+
+
+
+  &__secondary-logo {
+    margin: 0 0 0 147px;
+  }
+}

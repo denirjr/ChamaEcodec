@@ -1,6 +1,15 @@
 <section class="container">
-  <span>Your Knowledge Base</span>
+  <header class="container__header">
+    <span>Your Knowledge Base</span>
+    <app-search></app-search>
+  </header>
+
   <main class="container__content">
     <app-card></app-card>
   </main>
+
+  <footer class="container__footer">
+    <app-btn-data [text]="'CHAT WITH YOUR DATA'" [logoImg]="'chat.png'" />
+    <app-btn-data [text]="'LOAD NEW  DATA'" [logoImg]="'upload.svg'" />
+  </footer>
 </section>

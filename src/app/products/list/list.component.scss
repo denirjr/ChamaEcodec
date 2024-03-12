@@ -1,15 +1,31 @@
 @import "../../../styles.scss";
 
 .container {
-  @include dot-box(#e1d0d0, $primary);
-  span {
-    font-size: 3em;
-    color: $secondary;
-    line-height: 5.25rem;
-    font-weight: 600;
+  @include dot-box($intermediary, $primary);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    span {
+      font-size: 2em;
+      color: $secondary;
+      line-height: 5.25rem;
+      font-weight: 600;
+    }
   }
 
   &__content {
     @include dot-box($secondary, $primary);
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 1rem 0 0 0;
   }
 }

@@ -1,0 +1,24 @@
+@import "../../../styles.scss";
+
+.search-input {
+  position: relative;
+  width: 18.75rem;
+
+  & input {
+    width: calc(100% - 3vw);
+    padding: 0.813rem;
+    padding-left: 2.188rem;
+    border: 2px solid $secondary;
+    border-radius: 0.938rem;
+    outline: none;
+    background-color: $primary;
+  }
+
+  & .search-input__icon {
+    position: absolute;
+    top: 59%;
+    left: 0.625rem;
+    transform: translateY(-50%);
+    color: $secondary;
+  }
+}
