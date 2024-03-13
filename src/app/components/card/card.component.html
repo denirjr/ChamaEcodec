@@ -1,14 +1,19 @@
 <mat-list>
-  @for (item of items; track item) {
   <mat-list-item class="card-option">
-    @if (item) {
     <div class="text-container">
-      <span class="text-container__title">{{ item.title }}</span>
-      <span class="text-container__subtitle">{{ item.subtitle }}</span>
-      <app-btn-icon [icon]="'delete'" />
-      <app-btn-icon [icon]="'edit_square'" />
+
+      <span class="text-container__title">{{ card!.title }}</span>
+      <span class="text-container__subtitle">{{ card!.subtitle }}</span>
+
+      @if (isBtnAction) {
+        <button (click)="onDelete()" mat-mini-fab aria-label="">
+          <app-icon [icon]="'delete'"></app-icon>
+        </button>
+        <button (click)="onEdit()" mat-mini-fab aria-label="">
+          <app-icon [icon]="'edit_square'"></app-icon>
+        </button>
+      }
+
     </div>
-    }
   </mat-list-item>
-  }
 </mat-list>

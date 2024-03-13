@@ -1,4 +1,33 @@
 <section class="container">
-    BATATA
-    <main class="container__content"></main>
+  <app-main-title [text]="'Your Knowledge Base'" />
+
+  <main class="container__content">
+    <div data-matadata="model-name" class="container__content-metadata">
+      <span class="subtitle">Model Name</span>
+      <div>Icone 1 Icone 2 Icone 3</div>
+    </div>
+
+    <div class="container__content-response">Segunda coluna - Linha 1</div>
+
+    <div data-matadata="card-model" class="container__content-metadata">
+      <app-card [isBtnAction]="false" [card]="cardModel" />
+    </div>
+
+    <div class="container__content-metadata">
+      <span class="subtitle">Model Metadata</span>
+    </div>
+    <section class="container__content-box">
+      <div class="container__content-metadata">
+        <app-card [isBtnAction]="false" [card]="cardModel" />
+      </div>
+      <div class="container__content-metadata">
+        <app-card [isBtnAction]="false" [card]="cardModel" />
+      </div>
+      <div class="container__content-metadata">
+        <app-card [isBtnAction]="false" [card]="cardModel" />
+      </div>
+      <div class="container__content-metadata">Primeira coluna</div>
+      <div class="container__content-metadata">Primeira coluna</div>
+    </section>
+  </main>
 </section>

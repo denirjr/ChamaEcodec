@@ -1,11 +1,17 @@
 <section class="container">
   <header class="container__header">
-    <span>Your Knowledge Base</span>
+    <app-main-title [text]="'Your Knowledge Base'" />
     <app-search></app-search>
   </header>
 
   <main class="container__content">
-    <app-card></app-card>
+    @for (card of cards; track card ; let idx = $index) {
+    <app-card
+      (delete)="deleteItem(idx)"
+      (edit)="editItem(idx)"
+      [card]="card"
+    ></app-card>
+    }
   </main>
 
   <footer class="container__footer">

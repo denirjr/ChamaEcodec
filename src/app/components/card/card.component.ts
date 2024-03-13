@@ -1,46 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
-import { BtnIconComponent } from '../btn-icon/btn-icon.component';
+import { CommonModule } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
-type item = {
+export interface CardValue {
   title: string;
-  subtitle: string;
-};
+  subtitle?: string;
+}
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [MatListModule, BtnIconComponent],
+  imports: [MatListModule, IconComponent, CommonModule, MatButtonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  public items: item[] = [
-    {
-      title: 'Ceres Chair',
-      subtitle:
-        'he HON seating model XYZ123 is a great option for offices where',
-    },
-    {
-      title: 'Another Chair',
-      subtitle:
-        'The HON seating model XYZ123 is a great option for offices where',
-    },
-    {
-      title: 'Bla bla Bla',
-      subtitle:
-        'The HON seating model XYZ123 is a great option for offices where',
-    },
-    {
-      title: 'ABC Desk',
-      subtitle:
-        'The HON seating model XYZ123 is a great option for offices where',
-    },
-    {
-      title: 'Panel XYZ large',
-      subtitle:
-        'he HON seating model XYZ123 is a great option for offices where',
-    },
-  ];
+  @Input({ required: true })
+  public card: CardValue = { title: '', subtitle: '' };
+
+  @Input()
+  public isBtnAction: boolean = true
+
+  @Output() edit = new EventEmitter<never>();
+  @Output() delete = new EventEmitter<never>();
+
+  public onEdit(): void {
+    this.edit.emit();
+  }
+
+  public onDelete(): void {
+    this.delete.emit();
+  }
 }

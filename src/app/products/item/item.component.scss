@@ -1,9 +1,45 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 .container {
- @include dot-box(#E1D0D0, $primary);
+  @include dot-box(#e1d0d0, $primary);
+  padding: 1rem;
 
-    &__content {
+  &__content {
+    display: grid;
+    grid-template-columns: 25% 74%;
+    grid-template-rows: repeat(8, auto);
+    gap: 10px;
 
+    ::ng-deep.card-option {
+      margin: 0 !important;
     }
+
+    &-metadata {
+      grid-column: 1;
+
+      .subtitle {
+        @include subtitle();
+      }
+    }
+
+    [data-matadata="model-name"] {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    [data-matadata="card-model"] {
+      margin: 0 0 15px 0;
+    }
+
+    &-box {
+        @include dot-box(#e1d0d0, $primary);
+    }
+
+    &-response {
+      @include dot-box($secondary, #fed5d1);
+      grid-column: 2; /* Define a posição na segunda coluna */
+      grid-row: span 8; /* Ocupa as oito linhas */
+    }
+  }
 }
