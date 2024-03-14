@@ -34,6 +34,10 @@
 
     &-box {
         @include dot-box(#e1d0d0, $primary);
+
+        div {
+            margin: 0 0 1rem 0;
+        }
     }
 
     &-response {
